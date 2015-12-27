@@ -8,6 +8,6 @@ To accomplish that, I needed to create Player and Enemy objects in 'app.js' in o
 In the future, I will definetely update this game, implementing some useful features like score, different skins, new levels, gameplay and sounds.
 
 # Useful links
--[Game rules](https://www.youtube.com/watch?v=SxeHV1kt7iU&feature=youtu.be)
+1. [Game rules](https://www.youtube.com/watch?v=SxeHV1kt7iU&feature=youtu.be)
 
--[Rubric for evaluation](https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797)
+2. [Rubric for evaluation](https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797)
