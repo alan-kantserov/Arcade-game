@@ -10,9 +10,9 @@ var Enemy = function () { // function for enemies
     this.speed = Math.floor(Math.random() * 150) + 100; // attach speed value which will be different between enemies
     this.x = 0; // initial x axis position of the enemies will be 0, on the left side of screen
 
-    if (this.x = 0) {
+    if (this.x === 0) {
         this.y = Math.floor(Math.random() * 2.9) * 83 + 41.5; // enemies' initial y axis position will be randomly chosen between 3 lines
-    };
+    }
 };
 
 // Update the enemy's position, required method for game
@@ -25,15 +25,15 @@ Enemy.prototype.update = function (dt) {
 
     if (this.x > 500) { // if player reaches water, he wins and game starts from the beginning
         this.x = 0;
-        this.y = Math.floor(Math.random() * 3) * 83 + 41.5
+        this.y = Math.floor(Math.random() * 3) * 83 + 41.5;
         this.speed = Math.floor(Math.random() * 400) + 100;
-    };
+    }
 
     var location = Math.abs(player.x - this.x);
     if (location < 50.5 && this.y == player.y) { // reset player's postion if he collides with enemy
         player.x = 202;
         player.y = 373.5;
-    };
+    }
 };
 
 // Draw the enemy on the screen, required method for game
@@ -64,14 +64,14 @@ Player.prototype.handleInput = function (keyPress) { // this function will allow
         case "right":
             if (this.x < 404) { // player is unable to go out of the screen on the right if his x value is smaller than 404 
                 this.x = this.x + 101;
-            };
-            break
+            }
+            break;
 
         case "left":
             if (this.x > 0) { // player is unable to go out of the screen on the left if his x value is bigger than 0
                 this.x = this.x - 101;
-            };
-            break
+            }
+            break;
 
         case "up":
             if (this.y > 124) { // player is unable to go out of the screen up if his y value is bigger than 124
@@ -80,15 +80,15 @@ Player.prototype.handleInput = function (keyPress) { // this function will allow
                 console.log("You won");
                 this.x = 202;
                 this.y = 373.5;
-            };
-            break
+            }
+            break;
 
         case "down":
             if (this.y < 373) { // player is unable to go out of the screen down if his x value is smaller than 373
                 this.y = this.y + 83;
-            };
-            break
-    };
+            }
+            break;
+    }
 };
 
 
@@ -100,13 +100,13 @@ allEnemies = []; // Array that will contain all enemies objects
 
 var Difficulty = function (num) { // This function changes difficulty level according to the input "num" we provide.
     level = num;
-    for (i = 0; i < level; i++) {
-        allEnemies.push(new Enemy); // push all the enemies objects to "allEnemies" array
-    };
+    for (var i = 0; i < level; i++) {
+        allEnemies.push(new Enemy()); // push all the enemies objects to "allEnemies" array
+    }
 };
 
 Difficulty(4); // 4 enemies will spawn
-var player = new Player; // spawn player
+var player = new Player(); // spawn player
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
